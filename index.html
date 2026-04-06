@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pet'ini - Your pet's new best friend</title>
+    </head>
+    <body>
+        <nav class ="navbar">
+            <div class "nav-logo">
+                <span class="paw-icon">🐾</span>
+                <div>
+                    <span class="logo-text">PET'INI</span>
+                    <small> Your pet's new best friend</small>
+                </div>
+            </div>
+            <div class ="nav-links">
+                <a href="carte.html">Carte</a>
+                <a href ="search.html">Recherche</a>
+                <a href="messagerie.html">Message</a>
+                <a href="avis.html">Avis</a>
+            </div>
+            <div class="nav-auth">
+                <a href="signup.html" class="btn-outline">S'INSCRIRE</a>
+                <a href="login.html" class="btn-filled">SE CONNECTER</a>
+            </div>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>"
+        </nav>
+
+        <section class="hero">
+            <div class="hero-paws">
+                <span class = "fp1">🐾</span>
+                <span class = "fp2">🐾</span>
+                <span class = "fp3">🐾</span>
+                <span class = "fp4">🐾</span>
+            </div>
+            <div class="hero-content">
+                <h1 class ="hero-title">PET'INI</h1>
+                <p class ="hero-tagline">Je m'occupe de vos boules de poils pendant vos vacances !</p>
+                <div class ="hero-buttons">
+                    <a href="signup.html" class="btn-hero-main">Trouver un gardien 🐶</a>
+                    <a href ="login.html" class="btn-hero-sec">Devenir gardien 🏠</a>
+                </div>
+            </div>
+            <div class ="hero-img-wrap">
+                <div class="hero-dog-placehomder">
+                    <div class="dog-circle">
+                        <span style ="font-size:100px">🐕</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class ="mission">
+            <div class="mission-badge">
+                <h2 class ="mission-title"> Our <br> <em>mission!</em></h2>
+            </div>
+            <div class ="mission-text">
+                <p><strong>Pet'ini</strong>-Garde fiable pour vos animaux, où que vous soyez. </p>
+                <p>Trouvez des gardiens de confiance qui aiment vos compagnons autant que vous !</p>
+                <a href="carte.html" class="btn-misiion">Voir la carte </a>
+            </div>
+            <div class ="mission-img">
+                <span style ="font-size:90px">🤝🐾</span>
+            </div>
+        </section>
+        <section class ="features">
+            <h2 class ="section-title">Comment ça marche ?</h2>
+            <div class="features-grid">
+                <div class ="feature-card">
+                    <div class="features-icon">📋</div>
+                    <h3>Créez un profil</h3>
+                    <p>Décrivez votre animal : race, âge, habitudes, besoins spéciaux.</p>
+                </div>
+                <div class="features-card">
+                    <div class ="feature-icon">📅</div>
+                    <h3>Restez en contact</h3>
+                    <p>Messagerie intégrée et mises à jour photos pendant la garde.</p>
+                </div>
+            </div>
+        </section>
+    
+
+        <section class="map-teaser">
+            <div class="map-teaser-text">
+                <h2>Votre Compagnon <br><em>mérite un sitter  proximité</em></h2>
+                <a href ="carte.html" class="btn-map">Explorer la carte 📍</a>
+            </div>
+            <div class="map-preview">
+                <div class="fake-map">
+                    <span class ="pin1">📍</span>
+                    <span class ="pin1">📍</span>
+                    <div class ="map-grid"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="stats">
+            <div class="stat-item"><span class="stat-num">2 400+</span><span class="stat-label">Gardiens actifs</span></div>
+            <div class="stat-item"><span class="stat-num">8 900+</span><span class="stat-label">Animaux gardés</span></div> 
+            <div class="stat-item"><span class="stat-num">4.9⭐</span><span class="stat-label">note moyenne</span></div>  
+            <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Gratuit à l'inscription</span></div>  
+         </section>
+
+
+         <section class="Contact" id ="contact">
+             <div class="contact-left">
+                 <h2 class="contact-title">Contact<br><em>Us!</em></h2>
+                 <p>via</p>
+                 <ul>
+                     <li><a href="#">facebook</a></li>
+                     <li><a href="#">instagram</a></li>
+                     <li><a href="#">adresse e-mail</a></li>
+                 </ul>
+             </div>
+             <div>
+                 <form class="contact-right" action="api/contact.php" method="POST">
+                     <input type="text" name="nom" placeholder="Votre nom" required>
+                     <input type="email" name="email" placeholder="Votre e-mail" required>
+                     <textarea name ="message" placeholder="Votre message ..." rows="4" required></textarea>
+                     <button type="sumbit" class=""btn-filled">Envoyer 🐾</button>
+                 </form>
+             </div>
+             <div class ="paw-trail">
+                 <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+             </div>
+         </section>
+
+
+         <footer class ="footer">
+             <div class="footer-logo">
+                 <span>🐾PET'INI</span>
+                 <small>Your pet's new best friend</small>
+             </div>
+             <div class="footer-links">
+                <a href="carte.html">Carte</a>
+                <a href ="search.html">Recherche</a>
+                <a href="messagerie.html">Message</a>
+                <a href="avis.html">Avis</a>
+                <a href=""login.html>connextion</a>
+             </div>
+         </footer>
+
+         <script src="js/main.js"></script>
+    </body>
+</html>
