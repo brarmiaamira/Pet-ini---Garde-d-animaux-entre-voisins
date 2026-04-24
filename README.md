@@ -23,7 +23,7 @@ Les propriétaires peuvent créer un profil pour leur animal, rechercher un gard
 - HTML
 - CSS
 - JavaScript
-## Installation 
+- 
 ## 📁 Structure du projet
 
 ```text
@@ -32,5 +32,3 @@ projet/
 ├── backend/
 ├── docs/
 └── README.md
-
-
