@@ -170,7 +170,6 @@
   25%      { transform: translateX(-6px); }
   75%      { transform: translateX(6px); }
 }
-
 .success-msg {
   background: #f0faf0;
   color: var(--green);
