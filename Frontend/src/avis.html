@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avis — Pet'ini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="avis.css">
+  <script src="avis.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo"><img src="logo.png" alt="Pet'ini" /></div>
+    <div class="nav-links">
+      <a href="carte.html" class="nav-pill"> Carte</a>
+      <a href="recherche.html" class="nav-pill"> Recherche</a>
+      <a href="messagerie.html" class="nav-pill"> Message</a>
+      <a href="avis.html" class="nav-pill"> Avis</a>
+    </div>
+    <div class="nav-auth">
+      <a href="signup.html" class="btn-outline">S'INSCRIRE</a>
+      <a href="login.html" class="btn-filled">SE CONNECTER</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+  <div>  <!-- ← wrapper pour le texte -->
+    <h1><span class="mes_avis">Avis & Notations</span></h1>
+    <p>Les retours de notre communauté Pet'ini</p>
+  </div>
+  <span class="doga">
+    <img src="doga.png" alt="dog_avis">
+  </span>
+</div>
+
+  <div class="avis-page">
+
+    <!-- LEFT -->
+    <div class="avis-left">
+
+      <div class="avis-top-bar">
+        <h2 class="avis-section-title">Tous les avis</h2>
+        <div class="avis-filter">
+          <button class="filter-btn active" onclick="filterAvis(this,0)">Tous</button>
+          <button class="filter-btn" onclick="filterAvis(this,5)">★★★★★</button>
+          <button class="filter-btn" onclick="filterAvis(this,4)">★★★★</button>
+          <button class="filter-btn" onclick="filterAvis(this,3)">★★★</button>
+        </div>
+      </div>
+
+      <div class="avis-summary">
+        <div class="avis-score-big">
+          <div class="avis-score-num" id="score-num">—</div>
+          <div class="avis-score-stars" id="score-stars">★★★★★</div>
+          <div class="avis-score-count" id="score-count">0 avis</div>
+        </div>
+        <div class="avis-bars">
+          <div class="avis-bar-row"><span class="avis-bar-label">5</span><div class="avis-bar-track"><div class="avis-bar-fill" id="bar-5" style="width:0%"></div></div><span class="avis-bar-count" id="cnt-5">0</span></div>
+          <div class="avis-bar-row"><span class="avis-bar-label">4</span><div class="avis-bar-track"><div class="avis-bar-fill" id="bar-4" style="width:0%;background:#5c8a4a"></div></div><span class="avis-bar-count" id="cnt-4">0</span></div>
+          <div class="avis-bar-row"><span class="avis-bar-label">3</span><div class="avis-bar-track"><div class="avis-bar-fill" id="bar-3" style="width:0%;background:#b09070"></div></div><span class="avis-bar-count" id="cnt-3">0</span></div>
+          <div class="avis-bar-row"><span class="avis-bar-label">2</span><div class="avis-bar-track"><div class="avis-bar-fill" id="bar-2" style="width:0%;background:#d4b89a"></div></div><span class="avis-bar-count" id="cnt-2">0</span></div>
+          <div class="avis-bar-row"><span class="avis-bar-label">1</span><div class="avis-bar-track"><div class="avis-bar-fill" id="bar-1" style="width:0%;background:#c0392b"></div></div><span class="avis-bar-count" id="cnt-1">0</span></div>
+        </div>
+      </div>
+
+      <div class="avis-list" id="avis-list"></div>
+      <div class="avis-empty" id="avis-empty" style="display:none;">
+        <span>⭐</span>Aucun avis pour le moment.
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="avis-right">
+      <div class="notation-card">
+        <h2 class="notation-title"> Laisser un avis</h2>
+        <p class="notation-subtitle">Partagez votre expérience post-réservation</p>
+
+        <div class="star-rating">
+          <input type="radio" name="rating" id="s5" value="5"><label for="s5">★</label>
+          <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+          <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+          <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+          <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+        </div>
+        <div class="rating-label-text" id="rating-label">Cliquez pour noter</div>
+
+        <div class="criteria-grid">
+          <div class="criteria-row">
+            <span class="criteria-label"> Accueil</span>
+            <div class="criteria-stars" id="c-accueil">
+              <span class="criteria-star" onclick="rateCriteria('accueil',1)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('accueil',2)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('accueil',3)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('accueil',4)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('accueil',5)">★</span>
+            </div>
+          </div>
+          <div class="criteria-row">
+            <span class="criteria-label"> Communication</span>
+            <div class="criteria-stars" id="c-communication">
+              <span class="criteria-star" onclick="rateCriteria('communication',1)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('communication',2)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('communication',3)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('communication',4)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('communication',5)">★</span>
+            </div>
+          </div>
+          <div class="criteria-row">
+            <span class="criteria-label"> Soin animal</span>
+            <div class="criteria-stars" id="c-soin">
+              <span class="criteria-star" onclick="rateCriteria('soin',1)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('soin',2)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('soin',3)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('soin',4)">★</span>
+              <span class="criteria-star" onclick="rateCriteria('soin',5)">★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="n-group">
+          <label>Votre nom</label>
+          <input type="text" id="n-nom" placeholder="Ex: Sarah M." />
+        </div>
+        <div class="n-group">
+          <label>Gardien concerné</label>
+          <input type="text" id="n-gardien" placeholder="Nom du gardien" />
+        </div>
+        <div class="n-group">
+          <label>Animal gardé</label>
+          <input type="text" id="n-animal" placeholder="Ex: 🐶 Rex" />
+        </div>
+        <div class="n-group">
+          <label>Votre commentaire</label>
+          <textarea id="n-comment" rows="4" placeholder="Décrivez votre expérience..."></textarea>
+        </div>
+
+        <button class="btn-notation" onclick="submitAvis()">Publier mon avis ⭐</button>
+        <div class="notation-success" id="notif-success">✅ Merci ! Votre avis a été publié.</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

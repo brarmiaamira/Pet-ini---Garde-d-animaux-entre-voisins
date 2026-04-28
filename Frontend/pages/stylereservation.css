@@ -1,0 +1,99 @@
+ :root{
+  --cream:#f5f0e8;
+  --cream-dark:#ede4d4;
+  --pink:#e8d5c4;
+  --pink-dark:#d4b89a;
+
+  --green:#3a5a3c;
+  --green-mid:#5c8a4a;
+  --green-light:#7a9e6e;
+  --green-pale:#c8ddb8;
+
+  --brown:#3d2b1f;
+  --white:#ffffff;
+}
+
+/* PAGE CENTREE */
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  flex-direction:column;
+}
+
+/* TITRE CENTRÉ + STYLE */
+h1, h3{
+  text-align:center;
+  color: var(--green);
+  margin:10px 0;
+}
+
+/* CARTE PRINCIPALE (ENCADRE PAGE) */
+body > *{
+  width:100%;
+}
+
+form, div{
+  background: var(--white);
+  padding:20px;
+  border-radius:15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+  width:90%;
+  max-width:500px;
+  margin:10px auto;
+}
+
+/* LABEL */
+label{
+  display:block;
+  margin-top:10px;
+  font-weight:bold;
+  color: var(--green);
+}
+
+/* INPUTS */
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:2px solid var(--green-pale);
+  border-radius:10px;
+  outline:none;
+}
+
+input:focus, textarea:focus, select:focus{
+  border-color: var(--green-mid);
+}
+
+/* BOUTON */
+input[type="submit"], button{
+  background: var(--green-mid);
+  color:white;
+  border:none;
+  padding:12px;
+  margin-top:15px;
+  border-radius:10px;
+  cursor:pointer;
+  width:100%;
+  font-size:16px;
+  transition:0.3s;
+}
+
+input[type="submit"]:hover, button:hover{
+  background: var(--green);
+}
+
+/* TEXT INFO */
+p{
+  text-align:center;
+}
+span{
+  font-weight:bold;
+}

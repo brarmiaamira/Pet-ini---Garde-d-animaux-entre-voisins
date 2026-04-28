@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes Animaux — Pet'ini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="animaux.css" />
+  <script src="animaux.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo"><img src="logo.png" alt="Pet'ini" class="logo-img" /></div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-pill"><span class="nav-pill-icon"></span> Acceuil</a>
+      <a href="petProfil.php" class="nav-pill"><span class="nav-pill-icon"></span> profil</a>
+      <a href="carte.html" class="nav-pill"><span class="nav-pill-icon"></span> Carte</a>
+      <a href="recherche.html" class="nav-pill"> <span class="nav-pill-icon"></span> Recherche</a>
+      <a href="messagerie.html" class="nav-pill"><span class="nav-pill-icon"></span> Message</a>
+      <a href="avis.html" class="nav-pill"><span class="nav-pill-icon"></span> Avis</a>
+    </div>
+    <div class="nav-auth">
+      <a href="login.html" class="btn-filled">SE DECONNECTER</a>
+    </div>
+
+  </nav>
+
+<div class="page-header">
+  <div>
+    <h1><span class="mes_animaux">Mes Animaux</span></h1>
+    <p>Gérez les profils de vos compagnons</p>
+  </div>
+  <span class="animals" style="align-self: flex-end;">
+    <img src="animal.png" alt="animal">
+  </span>
+</div>
+
+  <!-- MAIN -->
+  <div class="animaux-page">
+    <div class="animaux-header">
+      <div class="animaux-title">
+        Mes compagnons
+        <span id="animal-count">Aucun animal ajouté</span>
+      </div>
+      <button class="btn-add" onclick="openModal()">
+        <span class="btn-add-icon">+</span>
+        Ajouter un animal
+      </button>
+    </div>
+
+    <!-- Grid -->
+    <div class="animaux-grid" id="animaux-grid" style="display:none;"></div>
+
+    <!-- Empty -->
+    <div class="animaux-empty" id="animaux-empty">
+      <div class="empty-illustration">🐾</div>
+      <div class="empty-title">Pas encore d'animaux !</div>
+      <p class="empty-sub">Ajoutez votre premier compagnon pour commencer.</p>
+      <button class="btn-add" onclick="openModal()">
+        <span class="btn-add-icon">+</span>
+        Ajouter mon premier animal
+      </button>
+    </div>
+  </div>
+
+  <!-- ── MODAL AJOUTER / MODIFIER ── -->
+  <div class="modal-overlay" id="modal" onclick="closeOutside(event,'modal')">
+    <div class="modal-card">
+
+      <div class="modal-header">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <h2 id="modal-title">Ajouter un animal</h2>
+        <p id="modal-sub">Renseignez les informations de votre compagnon</p>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Emoji -->
+        <div class="emoji-section">
+          <label>Choisir une icône</label>
+          <div class="emoji-grid">
+            <button class="emoji-btn selected" onclick="pickEmoji(this,'🐶')">🐶</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐱')">🐱</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐰')">🐰</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐦')">🐦</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐹')">🐹</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐠')">🐠</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🦜')">🦜</button>
+            <button class="emoji-btn" onclick="pickEmoji(this,'🐾')">🐾</button>
+          </div>
+        </div>
+
+        <!-- Nom -->
+        <div class="fg">
+          <label>Nom de l'animal *</label>
+          <input type="text" id="f-nom" placeholder="Ex: Rex, Luna, Mochi..." />
+        </div>
+
+        <!-- Espèce + Race -->
+        <div class="form-row">
+          <div class="fg">
+            <label>Espèce *</label>
+            <select id="f-espece">
+              <option value="">Choisir...</option>
+              <option>🐶 Chien</option>
+              <option>🐱 Chat</option>
+              <option>🐰 Lapin</option>
+              <option>🐦 Oiseau</option>
+              <option>🐹 Rongeur</option>
+              <option>🐠 Poisson</option>
+              <option>🐾 Autre</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Race</label>
+            <input type="text" id="f-race" placeholder="Ex: Berger allemand" />
+          </div>
+        </div>
+
+        <!-- Âge + Poids -->
+        <div class="form-row">
+          <div class="fg">
+            <label>Âge (ans)</label>
+            <input type="number" id="f-age" placeholder="Ex: 3" min="0" max="30" />
+          </div>
+          <div class="fg">
+            <label>Poids (kg)</label>
+            <input type="number" id="f-poids" placeholder="Ex: 8" min="0" />
+          </div>
+        </div>
+
+        <!-- Besoins -->
+        <div class="fg">
+          <label>Besoins spéciaux</label>
+          <textarea id="f-besoins" rows="3" placeholder="Régime alimentaire, médicaments, allergies..."></textarea>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+        <button class="btn-save" onclick="saveAnimal()">Enregistrer 🐾</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── MODAL SUPPRESSION ── -->
+  <div class="modal-overlay" id="modal-del" onclick="closeOutside(event,'modal-del')">
+    <div class="delete-card">
+      <div class="delete-icon">🗑️</div>
+      <div class="delete-title">Supprimer ?</div>
+      <p class="delete-sub">Voulez-vous vraiment supprimer <strong id="del-name"></strong> ? Cette action est irréversible.</p>
+      <div class="delete-actions">
+        <button class="btn-cancel" onclick="closeDelete()">Annuler</button>
+        <button class="btn-delete-confirm" onclick="confirmDelete()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

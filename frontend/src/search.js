@@ -1,7 +1,4 @@
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("active");
-}
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("search-form");
   const results = document.getElementById("results");

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet'ini – Your pet's new best friend</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+  <nav class="navbar">
+  <div class="nav-logo">
+    <img src="logo.png" alt="Pet'ini logo" class="logo-img" />
+  </div>
+
+  <div class="nav-links">
+  <a href="carte.html" class="nav-pill">
+    <span class="nav-pill-icon"></span> Carte
+  </a>
+  <a href="recherche.html" class="nav-pill">
+    <span class="nav-pill-icon"></span> Recherche
+  </a>
+  <a href="messagerie.html" class="nav-pill">
+    <span class="nav-pill-icon"></span> Message
+  </a>
+  <a href="avis.html" class="nav-pill">
+    <span class="nav-pill-icon"></span> Avis
+  </a>
+</div>
+
+  <div class="nav-auth">
+    <a href="signup.html" class="btn-filled">S'INSCRIRE</a>
+    <a href="login.html" class="btn-filled">SE CONNECTER</a>
+  </div>
+
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+<section class="hero">
+  <img src="dog_top_left.png" alt="Cute dog" class="dog_top_left" />
+  <img src="dog_right.png" alt="Cute dog" class="dog_right" />
+  <img src="dog_left_bottom.png" alt="Cute dog" class="dog_left_bottom" />
+
+  <div class="hero-paws">
+    <span class="fp1">🐾</span>
+    <span class="fp2">🐾</span>
+    <span class="fp3">🐾</span>
+    <span class="fp4">🐾</span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">La garde animaux qui prend soin 🐾</div>
+
+    <h1 class="hero-title">
+      <span class="hero-big-line">
+        <em class="hero-word-fun">Plus qu'un service,</em>
+        <em class="hero-word-serif hero-highlight">Pet'ini</em>
+      </span>
+       <p class="hero-tagline">
+      Je m'occupe de vos boules de poils pendant vos vacances !
+    </p>
+    </h1>
+    <div class="hero-buttons">
+      <a href="signup.html" class="btn-hero-main">Trouver un gardien </a>
+      <a href="login.html" class="btn-hero-sec">Devenir gardien </a>
+    </div>
+  </div>
+</section>
+
+    <section class="mission">
+
+  <!-- Panneau gauche sombre -->
+  <div class="mission-left">
+    <p class="mission-label">Pet'ini — Garde animaux</p>
+    <h2 class="mission-title">
+      Notre <em>mission !</em>
+    </h2>
+    <p class="mission-desc">
+      Pet'ini connecte propriétaires et gardiens passionnés. Nous croyons que chaque animal mérite une garde attentionnée, où que vous soyez.
+    </p>
+    <p class="mission-desc">
+      Trouvez des gardiens de confiance qui aiment vos compagnons autant que vous.
+    </p>
+  </div>
+
+  <!-- Badge cible central -->
+  <div class="mission-target">
+    <div class="target-inner">
+      <img src="dog_top_left.png" alt="Cute dog" class="dog_top_left" />
+    </div>
+  </div>
+  <div class="mission-dog">
+    <img src="dogmid.png" alt="Chien Pet'ini" />
+  </div>
+
+  <!-- Panneau droit — cartes -->
+  <div class="mission-right">
+    <div class="mission-card">
+      <div class="mission-card-icon">💬</div>
+      <div class="mission-card-body">
+        <h3 class="mission-card-title">Confiance & transparence</h3>
+        <p class="mission-card-text">Tous nos petsitters sont vérifiés et notés par la communauté.</p>
+      </div>
+    </div>
+
+    <div class="mission-card highlight">
+      <div class="mission-card-icon">🐾</div>
+      <div class="mission-card-body">
+        <h3 class="mission-card-title">Bien-être animal avant tout</h3>
+        <p class="mission-card-text">Chaque gardien est sélectionné pour son amour des animaux.</p>
+      </div>
+    </div>
+
+    <div class="mission-card">
+      <div class="mission-card-icon">📍</div>
+      <div class="mission-card-body">
+        <h3 class="mission-card-title">Proche de chez vous</h3>
+        <p class="mission-card-text">Trouvez un petsitter disponible dans votre quartier via la carte.</p>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+    <section class="features">
+      <h2 class="section-title">Comment ça marche ?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="features-icon">📋</div>
+          <h3>Créez un profil</h3>
+          <p>Décrivez votre animal : race, âge, habitudes, besoins spéciaux.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>Trouvez un gardien</h3>
+          <p>
+            Recherchez des gardiens près de chez vous sur la carte interactive.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Réservez des dates</h3>
+          <p>
+            Choisissez les dates, envoyez une demande et confirmez en ligne.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Restez en contact</h3>
+          <p>Messagerie intégrée et mises à jour photos pendant la garde.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-teaser-v2">
+  <div class="mt2-title-block">
+    <p class="mt2-label">Pet'ini — Carte des gardiens</p>
+    <h2 class="mt2-title">Votre compagnon mérite<br><em>un sitter à Monastir</em></h2>
+  </div>
+
+  <div class="mt2-tags">
+    <span class="mt2-tag active">#tous</span>
+    <span class="mt2-tag">#chiens</span>
+    <span class="mt2-tag">#chats</span>
+    <span class="mt2-tag">#disponible</span>
+    <span class="mt2-tag">#noté 4.9+</span>
+  </div>
+
+  <div class="mt2-map-wrap">
+    <div class="mt2-map-bg"></div>
+
+    <div class="mt2-sea"></div>
+    <div class="mt2-sea-label">Mer Méditerranée</div>
+
+    <div class="mt2-park mt2-park-1"></div>
+    <div class="mt2-park mt2-park-2"></div>
+    <div class="mt2-park mt2-park-3"></div>
+
+    <div class="mt2-road-h" style="top:38%;left:0;width:72%;"></div>
+    <div class="mt2-road-h" style="top:62%;left:0;width:65%;"></div>
+    <div class="mt2-road-v" style="left:30%;top:0;height:100%;"></div>
+    <div class="mt2-road-v" style="left:55%;top:0;height:72%;"></div>
+
+    <div class="mt2-pill" style="top:10%;left:14%;">
+      <span class="mt2-dot"></span>Médina<span class="mt2-arrow">→</span>
+    </div>
+    <div class="mt2-pill" style="top:10%;left:46%;">
+      <span class="mt2-dot"></span>Corniche<span class="mt2-arrow">→</span>
+    </div>
+    <div class="mt2-pill" style="top:42%;left:4%;">
+      <span class="mt2-dot"></span>Bembla<span class="mt2-arrow">→</span>
+    </div>
+    <div class="mt2-pill" style="top:42%;left:34%;">
+      <span class="mt2-dot"></span>Ksibet el-Médiouni<span class="mt2-arrow">→</span>
+    </div>
+    <div class="mt2-pill" style="bottom:24%;left:12%;">
+      <span class="mt2-dot"></span>Khniss<span class="mt2-arrow">→</span>
+    </div>
+    <div class="mt2-pill" style="bottom:24%;left:42%;">
+      <span class="mt2-dot"></span>Ouerdanine<span class="mt2-arrow">→</span>
+    </div>
+
+    <div class="mt2-controls">
+      <div class="mt2-ctrl mt2-ctrl-target">◎</div>
+      <div class="mt2-ctrl">+</div>
+      <div class="mt2-ctrl">−</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <a href="carte.html" class="btn-map">Explorer la carte 📍</a>
+  </div>
+</section>
+
+    <section class="stats">
+      <div class="stat-item">
+        <span class="stat-num">2 400+</span>
+        <span class="stat-label">Gardiens actifs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">8 900+</span>
+        <span class="stat-label">Animaux gardés</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4.9⭐</span>
+        <span class="stat-label">Note moyenne</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Gratuit à l'inscription</span>
+      </div>
+    </section>
+
+   <section class="Contact" id="contact">
+
+  <!-- LEFT: Info -->
+  <div class="contact-info-side">
+    <p class="contact-info-label">Contact Us</p>
+    <h2 class="contact-info-title">Prenez Contact !</h2>
+    <p class="contact-info-desc">
+      Une question sur Pet'ini ? Besoin d'aide pour trouver un gardien ou rejoindre notre communauté ? Notre équipe est là pour vous répondre rapidement.
+    </p>
+
+    <div class="contact-info-grid">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">📞</div>
+        <div>
+          <strong>Appelez-nous</strong>
+          <span>+216 70 000 000</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">✉️</div>
+        <div>
+          <strong>E-mail</strong>
+          <span>contact@petini.tn</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">🌐</div>
+        <div>
+          <strong>Site web</strong>
+          <span>www.petini.tn</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">📍</div>
+        <div>
+          <strong>Adresse</strong>
+          <span>Monastir, Tunisie</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-social">
+      <p class="contact-social-label">Suivez-nous</p>
+      <div class="contact-social-icons">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">ig</a>
+        <a href="#" class="social-btn">yt</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form -->
+  <div class="contact-form-side">
+    <div class="form-group">
+      <label for="nom">Votre Nom</label>
+      <input type="text" id="nom" name="nom" placeholder="Nom complet" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Votre E-mail</label>
+      <input type="email" id="email" name="email" placeholder="Adresse e-mail" required />
+    </div>
+    <div class="form-group">
+      <label for="sujet">Sujet</label>
+      <input type="text" id="sujet" name="sujet" placeholder="Sujet" required />
+    </div>
+    <div class="form-group">
+      <label for="message">Votre Message</label>
+      <textarea id="message" name="message" placeholder="Message …" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn-send">ENVOYER 🐾</button>
+  </div>
+
+  <div class="paw-trail">
+    <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+  </div>
+</section>
+  
+    <footer class="footer">
+      <div class="footer-logo">
+        <img src="logo.png" />
+        <small>Your pet's new best friend</small>
+      </div>
+
+      <div class="footer-links">
+        <a href="carte.html">Carte</a>
+        <a href="search.html">Recherche</a>
+        <a href="messagerie.html">Message</a>
+        <a href="avis.html">Avis</a>
+        <a href="login.html">Connexion</a>
+      </div>
+
+      <p class="footer-copy">© 2026 Pet'ini. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
