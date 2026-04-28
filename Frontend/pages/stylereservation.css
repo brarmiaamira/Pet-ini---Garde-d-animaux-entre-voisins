@@ -84,7 +84,7 @@ input:focus, textarea:focus, select:focus{
 }
 
 /* BOUTON */
-input[type="submit"], button{
+.but{
   background: var(--green-mid);
   color:white;
   border:none;
@@ -97,7 +97,7 @@ input[type="submit"], button{
   transition:0.3s;
 }
 
-input[type="submit"]:hover, button:hover{
+.but{
   background: var(--green);
 }
 

@@ -36,7 +36,7 @@ textarea {
     resize: none;
 }
 
-button {
+.but{
     width: 100%;
     padding: 12px;
     background: var(--green);
@@ -47,7 +47,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.but {
     background: var(--green-mid);
 }
 
@@ -66,3 +66,4 @@ button:hover {
     font-weight: bold;
     margin-bottom: 10px;
 }
+

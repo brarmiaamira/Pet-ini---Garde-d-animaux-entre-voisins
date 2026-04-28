@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recherche – Pet'ini</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="recherche.css" />
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+     <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.png" alt="Pet'ini logo" class="logo-img" />
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a href="accueil.html" class="nav-pill">Accueil</a>
+        <a href="petProfil.php">Profil animal</a>
+        <a href="recherche.html" class="nav-pill">Recherche</a>
+        <a href="carte.html" class="nav-pill">Carte</a>
+        <a href="reservation.php" class="nav-pill">Reservation</a>
+        <a href="messages.php" class="nav-pill">Message</a>
+        <a href="avis.html" class="nav-pill">Avis</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="acceil.html">Acceuil</a></li>
+          <li><a href="petProfil.php">Profil animal</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="carte.html">Carte</a></li>
+          <li><a href="reservation.php">Reservation</a></li>
+          <li><a href="messages.php">Message</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="index.html">Se déconnecter</a></li>
+        </ul>
+      </div>
+</nav>
+    <header class="search-header">
+      <h1>Rechercher un petsitter</h1>
+      <p>Trouvez la personne idéale pour prendre soin de votre compagnon 🐾</p>
+    </header>
+
+    <section class="search-filters">
+      <form class="filters-form" id="search-form">
+        <div class="filter-group">
+          <label for="ville">Ville</label>
+          <input type="text" id="ville" name="ville" placeholder="Ex: Tunis" />
+        </div>
+
+        <div class="filter-group">
+          <label for="animal">Type d'animal</label>
+          <select id="animal" name="animal">
+            <option value="">Choisir</option>
+            <option value="chien">Chien</option>
+            <option value="chat">Chat</option>
+            <option value="lapin">Lapin</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <div class="filter-group">
+          <label for="prix">Budget max</label>
+          <input type="number" id="prix" name="prix" placeholder="Ex: 50 DT" />
+        </div>
+
+        <button type="submit" class="btn-search">Rechercher</button>
+      </form>
+    </section>
+
+    <section id="results" class="petsitters-results"></section>
+
+    <script src="search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+.map-page {
+  min-height: calc(100vh - 72px);
+  background: var(--cream);
+  padding: 30px;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.map-header h1 {
+  font-family: var(--font-display);
+  color: var(--brown);
+  font-size: 2.4rem;
+}
+
+.map-header p {
+  color: var(--brown-mid);
+  font-weight: 700;
+}
+.nav-logo, div[class="nav-logo"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  background: var(--cream);
+  padding: 3px 14px;
+  border-radius: var(--radius-pill);
+}
+.logo-img { width: 110px; }
+
+#map {
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--pink);
+}

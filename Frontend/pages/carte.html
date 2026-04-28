@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte des petsitters – Pet'ini</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="carte.css" />
+  <link rel="stylesheet" href="recherche.css">
+</head>
+
+<body>
+<nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.png" alt="Pet'ini logo" class="logo-img" />
+        </a>
+      </div>
+
+      <div class="nav-links">
+        <a href="accueil.html" class="nav-pill">Accueil</a>
+        <a href="petProfil.php">Profil animal</a>
+        <a href="recherche.html" class="nav-pill">Recherche</a>
+        <a href="carte.html" class="nav-pill">Carte</a>
+        <a href="reservation.php" class="nav-pill">Reservation</a>
+        <a href="messages.php" class="nav-pill">Message</a>
+        <a href="avis.html" class="nav-pill">Avis</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="acceil.html">Acceuil</a></li>
+          <li><a href="petProfil.php">Profil animal</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="carte.html">Carte</a></li>
+          <li><a href="reservation.php">Reservation</a></li>
+          <li><a href="messages.php">Message</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="index.html">Se déconnecter</a></li>
+        </ul>
+      </div>
+</nav>
+
+  <!-- MAP -->
+  <section class="map-page">
+    <div class="map-header">
+      <h1>Carte des petsitters</h1>
+      <p>Trouvez les petsitters disponibles près de chez vous 🐾</p>
+    </div>
+
+    <div id="map"></div>
+  </section>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="carte.js"></script>
+
+</body>
+</html>

@@ -2,11 +2,11 @@
 session_start();
 include '../../Backend/config/db.php';
 
-//$owner_id = 2;
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
+$owner_id = 2;
+//if (!isset($_SESSION['user_id'])) {
+//    header("Location: login.php");
+//    exit();
+//}
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -86,18 +86,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un animal</title>
-
-    <!-- CSS GLOBAL -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="recherche.css">
     <link rel="stylesheet" href="style.css">
-
-    <!-- TON CSS -->
     <link rel="stylesheet" href="ajouterPet.css">
 </head>
 
 <body>
+<nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.png" alt="Pet'ini logo" class="logo-img" />
+        </a>
+      </div>
 
-<?php include '../components/nav.php'; ?>
+      <div class="nav-links">
+        <a href="accueil.html" class="nav-pill">Accueil</a>
+        <a href="petProfil.php">Profil animal</a>
+        <a href="recherche.html" class="nav-pill">Recherche</a>
+        <a href="carte.html" class="nav-pill">Carte</a>
+        <a href="reservation.php" class="nav-pill">Reservation</a>
+        <a href="messages.php" class="nav-pill">Message</a>
+        <a href="avis.html" class="nav-pill">Avis</a>
+      </div>
 
+      <div class="nav-right">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+      </div>
+      <div id="menu">
+        <ul>
+          <li><a href="acceil.html">Acceuil</a></li>
+          <li><a href="petProfil.php">Profil animal</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="carte.html">Carte</a></li>
+          <li><a href="reservation.php">Reservation</a></li>
+          <li><a href="messages.php">Message</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="index.html">Se déconnecter</a></li>
+        </ul>
+      </div>
+</nav>
 <div class="page-container">
 
     <div class="form-container">
@@ -142,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <img id="preview" src="images/photo de profil par default.png">
 
-            <button type="submit">Ajouter</button>
+            <button class="but" type="submit">Ajouter</button>
 
         </form>
 

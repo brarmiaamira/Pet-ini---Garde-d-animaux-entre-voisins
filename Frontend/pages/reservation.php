@@ -5,10 +5,10 @@ include '../../Backend/config/db.php';
 $owner_id = 2; 
 
 // 1. Vérifier si connecté
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-   exit();
-}
+//if (!isset($_SESSION['user_id'])) {
+  //  header("Location: login.php");
+  // exit();
+//}
 $erreur = "";
 
 ////////recuperation info de sitter //////
@@ -92,13 +92,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
   <link rel="stylesheet" href="stylereservation.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recherche.css">
   <title>Confirmation Réservation</title>
 
 </head>
 <body>
-    <?php include '../components/nav.php'; ?>
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="nav-logo">
+          <img src="logo.png" alt="Pet'ini logo" class="logo-img" />
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <a href="accueil.html" class="nav-pill">Accueil</a>
+        <a href="petProfil.php">Profil animal</a>
+        <a href="recherche.html" class="nav-pill">Recherche</a>
+        <a href="carte.html" class="nav-pill">Carte</a>
+        <a href="reservation.php" class="nav-pill">Reservation</a>
+        <a href="messages.php" class="nav-pill">Message</a>
+        <a href="avis.html" class="nav-pill">Avis</a>
+    </div>
+
+    <div class="nav-right">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <div id="menu">
+        <ul>
+          <li><a href="acceil.html">Acceuil</a></li>
+          <li><a href="petProfil.php">Profil animal</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="carte.html">Carte</a></li>
+          <li><a href="reservation.php">Reservation</a></li>
+          <li><a href="messages.php">Message</a></li>
+          <li><a href="avis.html">Avis</a></li>
+          <li><a href="index.html">Se déconnecter</a></li>
+        </ul>
+    </div>  
+</nav>
     <h1>Reservation</h1>
     <h3>reserverz-votre petsitter </h3>
     <p>Details de reservation</p>
@@ -147,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="date" name="date_fin" id="date_fin">
         <label for="messagepo">Message au gardien (optionnel)</label>
         <textarea name="message" id="messagepo"></textarea>
-        <input type="submit" value="reserver">
+        <button class="but" type="submit" value="reserver">Reserver</button>
     </form>
     <script src="reservation.js "></script>
 </body>
