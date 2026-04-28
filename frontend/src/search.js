@@ -1,10 +1,15 @@
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("search-form");
   const results = document.getElementById("results");
 
   async function loadPetsitters(query = "") {
     try {
-      const response = await fetch(`api/search.php${query}`);
+      const url = `/petini/backend/api/search.php${query}`;
+      const response = await fetch(url);
       const data = await response.json();
 
       results.innerHTML = "";
@@ -14,33 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      data.forEach(petsitter => {
+      data.forEach(function (petsitter) {
         const card = document.createElement("div");
         card.className = "petsitter-card";
 
         card.innerHTML = `
-          <img src="${petsitter.photo || 'default-petsitter.jpg'}" alt="${petsitter.nom}">
+          <img src="${petsitter.photo || "default-petsitter.jpg"}" alt="${petsitter.nom}">
           <div class="petsitter-info">
             <h2>${petsitter.nom}</h2>
             <p>📍 ${petsitter.ville}</p>
             <p>🐾 ${petsitter.type_animal}</p>
-            <p>💰 ${petsitter.tarif_par_jour} DT / jour</p>
-            <p>⭐ ${petsitter.note ?? "N/A"}</p>
-            <p>${petsitter.categorie_experience ?? ""}</p>
-            <button class="btn-profile">Réserver</button>
+            <p>⭐ ${petsitter.note}</p>
+            <p class="price">${petsitter.tarif_par_jour} DT / jour</p>
+            <a href="profil-petsitter.html" class="btn-profile">Voir le profil</a>
           </div>
         `;
 
         results.appendChild(card);
       });
+
     } catch (error) {
-      results.innerHTML = "<p>Erreur lors du chargement des petsitters.</p>";
       console.error(error);
+      results.innerHTML = "<p>Erreur lors du chargement des petsitters.</p>";
     }
   }
+  
 
+  // Load all petsitters at start
   loadPetsitters();
 
+  // Only when button is clicked
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -57,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (date) params.append("date", date);
 
     const query = params.toString() ? `?${params.toString()}` : "";
+
     loadPetsitters(query);
   });
 });

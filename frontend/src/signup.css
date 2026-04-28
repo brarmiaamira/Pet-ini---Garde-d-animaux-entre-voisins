@@ -198,3 +198,14 @@
   transition: color var(--dur) var(--ease);
 }
 .auth-switch a:hover { color: var(--green-mid); }
+.nav-logo, div[class="nav-logo"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  background: var(--cream);
+  padding: 3px 14px;
+  border-radius: var(--radius-pill);
+}
+.logo-img { width: 110px; }

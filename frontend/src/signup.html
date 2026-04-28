@@ -4,14 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription – Pet'ini</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/signup.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html"><img src="logo.png" alt="Pet'ini logo" class="logo-img" /></a>
+      </div>
+
+
+    <div class="nav-auth">
+      <a href="login.html" class="btn-filled">SE CONNECTER</a>
+    </div>
+    </nav>
     
 
     <div class="auth-page-signup">
@@ -26,7 +37,7 @@
         <h1 class="bon-signup">Créer un compte</h1>
         
         
-        <form id="signup-form" action="api/signup.php" method="POST">
+        <form id="signup-form" action="../../backend/api/signup.php" method="POST">
           <div class="form-group">
             <label for="prenom">PRÉNOM</label>
             <input
@@ -68,6 +79,7 @@
                 placeholder="Min. 8 caractères"
                 required
                 minlength="8"
+                required
               />
               <span
                 class="toggle-password"
@@ -128,6 +140,6 @@
         </div>
       </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="signup.js"></script>
   </body>
 </html>

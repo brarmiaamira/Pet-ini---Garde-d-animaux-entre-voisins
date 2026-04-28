@@ -8,7 +8,7 @@ $animal = trim($_GET['animal'] ?? '');
 $prix = $_GET['prix'] ?? '';
 $date = $_GET['date'] ?? '';
 
-$sql = "SELECT DISTINCT p.*
+$sql = "SELECT  p.*
         FROM petsitters p
         LEFT JOIN petsitter_disponibilites d ON p.id = d.petsitter_id
         WHERE 1=1";

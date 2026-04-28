@@ -217,7 +217,7 @@ em { font-family: var(--font-accent); font-style: normal; }
 .navbar {
   position: sticky;
   height:60px;
-  width:70px;
+  width:100%;
   top: 0;
   z-index: 200;
   display: flex;
@@ -228,6 +228,7 @@ em { font-family: var(--font-accent); font-style: normal; }
   border-bottom: 2px solid var(--pink);
   box-shadow: 0 2px 14px rgba(61,43,31,.07);
   gap: var(--gap-sm);
+  box-sizing: border-box;
 }
 
 
@@ -246,6 +247,7 @@ em { font-family: var(--font-accent); font-style: normal; }
 div[class ="nav-links"] {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--gap-md);
 }
 
@@ -275,7 +277,7 @@ div[class ="nav-links"] {
 
 /* Hamburger (mobile) */
 .hamburger {
-  display: none;
+  
   background: none;
   border: none;
   font-size: 1.7rem;
@@ -976,7 +978,7 @@ form.contact-right {
   .nav-links.open { display: flex; }
   .nav-auth   { display: none; }
   .nav-auth.open { display: flex; flex-direction: column; }
-  .hamburger  { display: block; }
+  
 
   /* Hero stacks */
   .hero {
