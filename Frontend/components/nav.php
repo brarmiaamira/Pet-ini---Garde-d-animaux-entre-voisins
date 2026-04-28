@@ -10,7 +10,7 @@
     <a href="carte.php">Carte</a>
     <a href="messages.php">Message</a>
     <a href="avis.php">Avis</a>
-    <a href="profil_animal.php">Profil animal</a>
+    <a href="petProfil.php">Profil animal</a>
   </div>
   <button class="hamburger" onclick="toggleMenu()">☰</button>
 </nav>

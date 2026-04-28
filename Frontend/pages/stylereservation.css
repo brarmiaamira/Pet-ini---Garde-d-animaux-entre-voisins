@@ -16,17 +16,29 @@
 /* PAGE CENTREE */
 body{
   margin:0;
+  align-items: center;
   font-family: Arial, sans-serif;
   background: var(--cream);
   color: var(--brown);
 
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  flex-direction:column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+
+}
+.card-reservation {
+  margin-top: 120px; /* espace sous navbar */
+}
+.card-reservation h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
 }
 
+.card-reservation p {
+  margin: 8px 0;
+  font-size: 16px;
+}
 /* TITRE CENTRÉ + STYLE */
 h1, h3{
   text-align:center;
@@ -39,17 +51,16 @@ body > *{
   width:100%;
 }
 
-form, div{
+.card-reservation {
   background: var(--white);
-  padding:20px;
-  border-radius:15px;
+  padding: 25px;
+  border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 
-  width:90%;
-  max-width:500px;
-  margin:10px auto;
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
 }
-
 /* LABEL */
 label{
   display:block;
@@ -97,3 +108,23 @@ p{
 span{
   font-weight:bold;
 }
+
+
+
+
+.sitter-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 60%;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#img{
+  max-width: 5px; /* Ajustez la taille de l'image */
+  height: 20px;
+}
+

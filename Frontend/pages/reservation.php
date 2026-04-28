@@ -5,11 +5,34 @@ include '../../Backend/config/db.php';
 $owner_id = 2; 
 
 // 1. Vérifier si connecté
-//if (!isset($_SESSION['user_id'])) {
- //   header("Location: login.php");
- //   exit();
-//}
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+   exit();
+}
 $erreur = "";
+
+////////recuperation info de sitter //////
+
+$sql_sitter = "SELECT 
+    u.nom,
+    u.prenom,
+    u.photo,
+    s.tarif,
+    s.ville,
+    COALESCE(AVG(a.note), 0) AS avis_moyen
+FROM sitters s
+JOIN utilisateurs u ON s.utilisateur_id = u.id
+LEFT JOIN avis a ON a.cible_id = u.id
+WHERE u.id = 3
+GROUP BY u.id, u.nom, u.prenom, u.photo, s.tarif, s.ville";
+////$sitter_id
+$result_sitter = mysqli_query($conn, $sql_sitter);
+$sitter = mysqli_fetch_assoc($result_sitter);
+
+if (!$sitter) {
+    die("Sitter non trouvé.");
+}
+
 // 2. Traiter le formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Récupérer les données
@@ -58,9 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //}
         if ($result) {
             $reservation_id = mysqli_insert_id($conn);
-            echo "Reservation ID : " . $reservation_id . "<br>";
-            echo "Redirection vers : confirmerreservation.php?id=" . $reservation_id . "<br>";
-            echo "<a href='confirmerreservation.php?id=" . $reservation_id . "'>Clique ici</a>";
+            header("Location: confirmerreservation.php?id=" . $reservation_id);
             exit();
         }
     }
@@ -81,12 +102,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h1>Reservation</h1>
     <h3>reserverz-votre petsitter </h3>
     <p>Details de reservation</p>
-    <div>
-        <p id="nomp"></p>
-        <p id="localisationp"></p>
-        <span id="avisp"></span>
-        <p id="prixp"></p>
+    <div class="sitter-card">
+        <?php 
+        $sql = "SELECT 
+            u.nom,
+            u.prenom,
+            s.tarif,
+            s.ville,
+            u.photo,
+            u.id AS sitter_id,
+            AVG(a.note) AS avis_moyen
+        FROM sitters s
+        JOIN utilisateurs u ON s.utilisateur_id = u.id
+        LEFT JOIN avis a ON a.cible_id = u.id
+        WHERE s.disponibilite = 1
+        GROUP BY u.id, u.nom, u.prenom, s.tarif, s.ville";   
+        ?>
+        <img src="<?= $sitter['photo'] ?? 'images/photo de profil par default.png' ?>" alt="Photo sitter">
+        <p><strong>Nom :</strong> <?= $sitter['prenom'] ?> <?= $sitter['nom'] ?></p>
+        <p><strong>Localisation :</strong> <?= $sitter['ville'] ?></p>
+        <p><strong>Avis :</strong> ⭐ <?= round($sitter['avis_moyen'],1) ?>/5</p>
+        <p><strong>Prix :</strong> <?= $sitter['tarif'] ?> TND / jour</p>          
     </div>
+
     <form action="reservation.php" method="post">
         <label for="animaux">Votre animal</label>
         <select name="animal" id="animaux">

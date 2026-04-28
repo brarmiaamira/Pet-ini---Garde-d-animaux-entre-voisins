@@ -1,0 +1,220 @@
+:root {
+    --font-body: 'Segoe UI', Tahoma, sans-serif;
+    --cream: #FDF6EC;
+    --green: #4CAF50;
+    --green-mid: #388E3C;
+    --green-pale: #E8F5E9;
+    --brown: #5D4037;
+    --brown-mid: #795548;
+    --pink: #F8BBD0;
+    --pink-dark: #F48FB1;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.07);
+    --radius-md: 12px;
+    --radius-sm: 6px;
+    --radius-pill: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+body {
+    background: var(--cream);
+    min-height: 100vh;
+}
+
+.page-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 32px;
+}
+
+/* ===== PARTIE GAUCHE ===== */
+.Left {
+    width: 45%;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-self: flex-start;
+    position: sticky;
+    top: 24px;
+}
+
+.Left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 4px solid var(--green);
+    display: block;
+}
+
+.Left h1 {
+    text-align: center;
+    color: var(--brown);
+    font-size: 1.5rem;
+}
+
+.Left > p {
+    color: var(--brown-mid);
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+}
+
+.Left > p strong {
+    color: var(--brown);
+    margin-right: 4px;
+}
+
+/* Blocs description / besoins */
+.section-bloc {
+    background: var(--cream);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    border-left: 3px solid var(--green);
+}
+
+.section-bloc h3 {
+    color: var(--brown);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.texte-bloc {
+    color: var(--brown-mid);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.Left button {
+    padding: 12px 24px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+    margin-top: 4px;
+}
+
+.Left button:hover {
+    background: var(--green-mid);
+}
+
+/* ===== PARTIE DROITE ===== */
+.Right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.Right h1 {
+    color: var(--brown);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.animal-card {
+    display: flex;
+    gap: 16px;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: all 0.25s;
+    border: 2px solid transparent;
+}
+
+.animal-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+}
+
+.animal-card.active {
+    border-color: var(--green);
+    background: var(--green-pale);
+}
+
+.animal-card .photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--green);
+    display: block;
+}
+
+.animal-card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.animal-card .info p {
+    color: var(--brown-mid);
+    font-size: 0.9rem;
+}
+
+.animal-card .info p strong {
+    color: var(--brown);
+}
+
+.Right > button {
+    padding: 12px 24px;
+    background: var(--pink);
+    color: var(--brown);
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+    align-self: flex-start;
+}
+
+.Right > button:hover {
+    background: var(--pink-dark);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .page-content {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .Left {
+        width: 100%;
+        position: static;
+    }
+    .Right {
+        width: 100%;
+    }
+}
+
+/*supprimer profil */
+
+button {
+    background: red;
+    color: white;
+}
+button:hover {
+    background: darkred;
+}

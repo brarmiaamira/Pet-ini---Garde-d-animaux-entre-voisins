@@ -3,15 +3,27 @@ session_start();
 include '../../Backend/config/db.php';
 
 // 1. Vérifier si connecté
-//if (!isset($_SESSION['user_id'])) {
- //   header("Location: login.php");
-    //exit();
-//}
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+if (isset($_POST['confirmer'])) {
 
+    $update = "UPDATE reservations 
+               SET statut = 'confirmée' 
+               WHERE id = $reservation_id 
+               AND proprietaire_id = $user_id";
+
+    mysqli_query($conn, $update);
+
+    // Redirection après confirmation
+    header("Location: accueil.php");
+    exit();
+}
 // 2. Récupérer l'id depuis l'URL
 ////////////
 // Temporaire — simule owner connecté
-$user_id = 2;  // ← ajoute cette ligne
+//$user_id = 2;  // ← ajoute cette ligne
 /////////
 $reservation_id = intval($_GET['id']);
 
@@ -47,8 +59,7 @@ $jours = $fin->diff($debut)->days + 1;
 </head>
 <body>
     <?php include '../components/nav.php'; ?>
-    <div>
-        <h1>Réservation</h1>
+    <div class="card-reservation">        <h1>Réservation</h1>
         <p>Gardien :
             <span><?= $reservation['prenom'] ?> <?= $reservation['nom'] ?></span>
         </p>
@@ -68,7 +79,9 @@ $jours = $fin->diff($debut)->days + 1;
         <p>Tarif :
             <span><?= $reservation['prix_total'] ?> TND</span>
         </p>
-        <button onclick="confirmer()">Confirmer</button>
+        <form method="POST">
+            <button type="submit" name="confirmer">Confirmer</button>
+        </form>  
     </div>
     <script>
     function confirmer() {
